@@ -1,0 +1,18 @@
+<h1>Tarun's portfolio</h1>
+
+{% load static %}
+
+
+
+<a href="{% url 'blog:home_blog'%}">blog</a><br>
+<img src="{% static 'portfolio/77931.png' %}" style="width: 40%;height: 40%;"><br>
+
+{% for project in sollakay %}
+
+{{project.title}}<br>
+<img src={{project.image.url}}  style="width: 50%;height: 50%;"/><br>
+
+{% if project.url %}
+<a href="{{project.url}}">link</a>
+{%endif%}
+{% endfor %} 
